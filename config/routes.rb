@@ -2,7 +2,7 @@ Rails.application.routes.draw do
     devise_for :users
 
   root to: 'pages#home'
-  resources :questions
+    resources :questions, only: [:index, :new, :create]
 
   # Generic syntax:
   # verb 'path', to: 'controller#action'
