@@ -22,7 +22,19 @@ Bundler.require(*Rails.groups)
 module Demokratia
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.generators do |generate|
+      generate.assets false
+      generate.helper false
+      generate.test_framework :test_unit, fixture: false
+    end
+    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    # config.i18n.available_locales = :fr-FR
+    config.i18n.default_locale = :fr
+    config.active_record.belongs_to_required_by_default = false
+
+
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

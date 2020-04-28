@@ -1,0 +1,10 @@
+<div class="reasoncss">
+<h2>Ajouter des questions</h2>
+
+<%= simple_form_for ([@user, @question]) do |f| %>
+  <%= f.input :name%>
+  <%= f.input :description %>
+  <%= f.submit "Enregistrer", class: "btn btn-primary" %>
+<% end %>
+</div>
+s
