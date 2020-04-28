@@ -1,19 +1,20 @@
 
-  <div class="container">
-  <% @questions.each do |question| %>
-        <li>
-        <%= question.name %> -
-        <%= question.description %>
-        </li>
-        <%= link_to like_question_path(question), method: :put do %>
-        upvote
-          <%= question.get_upvotes.size %>
-        <%= link_to dislike_question_path(question), method: :put do %>
-  Downvote
-  <%= question.get_downvotes.size %>
-<% end %>
-      <% end %>
+  <div class="container text-center">
+    <% Question.order(:cached_votes_up).each do |question| %>
     <% end %>
-
-  </div>
+      <% @questions.each do |question| %>
+        <li>
+          <%= question.name %>
+          <%= question.description %>
+        </li>
+         <%= link_to like_question_path(question), method: :put, class:"btn btn-primary" do %>
+          POUR
+            <%= question.get_upvotes.size %>
+        <%= link_to dislike_question_path(question), method: :put, class:"btn btn-danger" do %>
+          CONTRE
+            <%= question.get_downvotes.size %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
 

@@ -27,7 +27,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/new_reason";
+@import "pages/home";
 @import "components/navbar";
 @import "components";
 @import "components/footer";
